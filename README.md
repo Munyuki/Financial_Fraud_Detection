@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![XGBoost](https://img.shields.io/badge/XGBoost-3.2.0-red.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-Fraud Detection in Financial Transactions
+
 
 Project Overview
 
