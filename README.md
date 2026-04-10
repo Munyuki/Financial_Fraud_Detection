@@ -5,30 +5,30 @@
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 
-Project Overview
+## Project Overview
 
 An end-to-end machine learning solution for detecting fraudulent transactions in mobile money systems using a synthetic dataset of over 6.3 million records. The solution focuses on building a robust, scalable, and interpretable fraud detection model using modern data science techniques.
 
-Problem Statement
+## Problem Statement
 
 Fraud in mobile financial systems poses a significant risk to both service providers and users. The objective of this project is to develop a model that can accurately identify fraudulent transactions while minimizing false negatives, as missing fraud can lead to severe financial losses.
 
-Dataset Overview
+## Dataset Overview
 
 The dataset is a synthetic financial dataset generated using the PaySim simulator, containing over 6.3 million transactions. It includes transaction details such as type, amount, account balances, and fraud labels. The dataset is highly imbalanced, with fraudulent transactions accounting for approximately 0.13% of all records.
 
-Approach
+## Approach
 
 The project follows a structured data science workflow including exploratory data analysis, feature engineering, model training, evaluation, and interpretation.
 
-Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
 · Fraud vs. non-fraud distribution analysis
 · Transaction type patterns by fraud occurrence
 · Amount distribution comparison between fraud and legitimate transactions
 · Correlation heatmap of numerical features
 
-Feature Engineering
+## Feature Engineering
 
 Key engineered features include:
 
@@ -36,7 +36,7 @@ Key engineered features include:
 · One-hot encoding of transaction types (PAYMENT, TRANSFER, CASH_OUT, etc.)
 · Removal of ID columns (nameOrig, nameDest) to prevent data leakage
 
-Models Used
+## Models Used
 
 The project evaluates multiple machine learning models:
 
@@ -44,7 +44,7 @@ The project evaluates multiple machine learning models:
 · Random Forest (with balanced class weights)
 · XGBoost (primary model with hyperparameter tuning)
 
-Handling Class Imbalance
+## Handling Class Imbalance
 
 Instead of undersampling, the project uses:
 
@@ -53,7 +53,7 @@ Instead of undersampling, the project uses:
 
 This approach preserves valuable data while improving fraud detection performance.
 
-Hyperparameter Tuning
+## Hyperparameter Tuning
 
 XGBoost is optimized using RandomizedSearchCV with cross-validation (3 folds) over 8 parameter combinations, evaluating on ROC-AUC score. Parameters tuned include:
 
@@ -63,7 +63,7 @@ XGBoost is optimized using RandomizedSearchCV with cross-validation (3 folds) ov
 · subsample (0.8, 1.0)
 · colsample_bytree (0.8, 1.0)
 
-Evaluation Metrics
+## Evaluation Metrics
 
 Models are evaluated using metrics suitable for imbalanced classification:
 
@@ -71,7 +71,7 @@ Models are evaluated using metrics suitable for imbalanced classification:
 · Confusion Matrix
 · ROC-AUC (used for model selection during tuning)
 
-Model Explainability
+## Model Explainability
 
 SHAP (SHapley Additive exPlanations) is used to interpret model predictions, providing:
 
@@ -81,7 +81,7 @@ SHAP (SHapley Additive exPlanations) is used to interpret model predictions, pro
 
 The SHAP summary plot reveals that balance errors and transaction patterns are the strongest indicators of fraud.
 
-Key Results
+## Key Results
 
 · Logistic Regression: Poor precision for fraud class (1%), despite high recall (95%)
 · Random Forest: Excellent performance (96% recall, 100% precision for fraud)
@@ -102,11 +102,11 @@ Key Results
 
 Feature importance analysis confirms that balance inconsistencies (orig_balance_error, dest_balance_error) and transaction amount are the strongest predictors of fraudulent activity.
 
-Business Impact
+## Business Impact
 
 The model can be deployed in real-time systems to flag suspicious transactions, reducing financial losses and improving security in mobile payment platforms. High recall ensures that most fraudulent activities are detected, while SHAP explainability provides auditability and regulatory compliance support.
 
-Requirements
+## Requirements
 
 · Python 3.10+
 · pandas, numpy, matplotlib, seaborn
@@ -114,7 +114,7 @@ Requirements
 · xgboost
 · shap
 
-Future Work
+## Future Work
 
 · Deploy model as a real-time API endpoint
 · Implement cost-sensitive learning to optimize for business metrics
