@@ -57,7 +57,7 @@ Instead of undersampling, the project uses:
 
 · class_weight='balanced' for Logistic Regression and Random Forest
 
-· scale_pos_weight parameter in XGBoost
+· scale_pos_weight parameter in XGBoost (calculated as the ratio of negative to positive samples)
 
 This approach preserves valuable data while improving fraud detection performance.
 
