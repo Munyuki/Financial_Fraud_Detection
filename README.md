@@ -120,6 +120,11 @@ Therefore, XGBoost is selected as the preferred model due to its better generali
 
 *Only 0.13% of transactions are fraudulent*
 
+## Transaction Type Patterns
+<img width="511" height="313" alt="Transaction Type Patterns" src="https://github.com/user-attachments/assets/1af7c477-ed9e-4148-a376-bcac829ed97f" />
+
+*The distribution shows that fraudulent transactions are exclusively concentrated in TRANSFER and CASH_OUT types, while types like PAYMENT and CASH_IN show zero fraudulent activity in this dataset.*
+
 ### Model Performance
 <img width="677" height="139" alt="XGBoost Classification Report" src="https://github.com/user-attachments/assets/5c20b62a-f46c-407c-93d8-6b5076532fb2" />
 
