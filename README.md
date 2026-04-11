@@ -132,13 +132,9 @@ Additionally, the use of SHAP explainability enhances transparency, enabling fin
 ## Requirements
 
 · Python 3.10+
-
 · pandas, numpy, matplotlib, seaborn
-
 · scikit-learn
-
 · xgboost
-
 · shap
 
 ## Future Work
