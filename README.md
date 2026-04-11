@@ -122,8 +122,11 @@ Feature importance analysis confirms that balance inconsistencies (orig_balance_
 ## Business Impact
 
 The model can be deployed in real-time transaction processing systems to flag suspicious activities before completion, significantly reducing financial losses.
+
 With a recall of 90% (achieved by the final tuned XGBoost model), the model is capable of detecting approximately 90 out of every 100 fraudulent transactions, ensuring the majority of fraud attempts are identified.
+
 While there is a trade-off with false positives (precision of 81%), this level of accuracy is exceptionally high for fraud detection. It means that for every 10 flagged transactions, roughly 8 are actual fraud, which minimizes the operational burden of manual investigation compared to traditional models like Logistic Regression (which only had 1% precision).
+
 Additionally, the use of SHAP explainability enhances transparency, enabling financial institutions to justify flagged transactions for auditing and regulatory compliance purposes.
 
 ## Requirements
