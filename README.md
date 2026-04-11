@@ -9,12 +9,6 @@
 
 An end-to-end machine learning solution for detecting fraudulent transactions in mobile money systems using a synthetic dataset of over 6.3 million records. The solution focuses on building a robust, scalable, and interpretable fraud detection model using modern data science techniques.
 
-## Dataset
-- **Source:** Kaggle - Synthetic Financial Datasets For Fraud Detection (PaySim)
-- **License:** CC BY-NC-SA 4.0
-- **Description:** Simulated mobile money transactions with ~0.13% fraud rate
-- **Link:** [https://www.kaggle.com/datasets/ealaxi/paysim1](https://www.kaggle.com/datasets/ealaxi/paysim1)
-
 ## Problem Statement
 
 Fraud in mobile financial systems poses a significant risk to both service providers and users. The objective of this project is to develop a model that can accurately identify fraudulent transactions while minimizing false negatives, as missing fraud can lead to severe financial losses.
@@ -22,6 +16,12 @@ Fraud in mobile financial systems poses a significant risk to both service provi
 ## Dataset Overview
 
 The dataset is a synthetic financial dataset generated using the PaySim simulator, containing over 6.3 million transactions. It includes transaction details such as type, amount, account balances, and fraud labels. The dataset is highly imbalanced, with fraudulent transactions accounting for approximately 0.13% of all records.
+
+### Dataset:
+- **DSource:** Kaggle - Synthetic Financial Datasets For Fraud Detection (PaySim)
+- **License:** CC BY-NC-SA 4.0
+- **Description:** Simulated mobile money transactions with ~0.13% fraud rate
+- **Link:** [https://www.kaggle.com/datasets/ealaxi/paysim1](https://www.kaggle.com/datasets/ealaxi/paysim1)
 
 ## Approach
 
