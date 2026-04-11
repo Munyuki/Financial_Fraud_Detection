@@ -24,8 +24,11 @@ The project follows a structured data science workflow including exploratory dat
 ## Exploratory Data Analysis (EDA)
 
 · Fraud vs. non-fraud distribution analysis
+
 · Transaction type patterns by fraud occurrence
+
 · Amount distribution comparison between fraud and legitimate transactions
+
 · Correlation heatmap of numerical features
 
 ## Feature Engineering
@@ -33,7 +36,9 @@ The project follows a structured data science workflow including exploratory dat
 Key engineered features include:
 
 · Balance error metrics: orig_balance_error and dest_balance_error to detect account inconsistencies
+
 · One-hot encoding of transaction types (PAYMENT, TRANSFER, CASH_OUT, etc.)
+
 · Removal of ID columns (nameOrig, nameDest) to prevent data leakage
 
 ## Models Used
@@ -41,7 +46,9 @@ Key engineered features include:
 The project evaluates multiple machine learning models:
 
 · Logistic Regression (baseline with class balancing)
+
 · Random Forest (with balanced class weights)
+
 · XGBoost (primary model with hyperparameter tuning)
 
 ## Handling Class Imbalance
@@ -59,9 +66,13 @@ This approach preserves valuable data while improving fraud detection performanc
 XGBoost is optimized using RandomizedSearchCV with cross-validation (3 folds) over 8 parameter combinations, evaluating on ROC-AUC score. Parameters tuned include:
 
 · n_estimators (100, 200)
+
 · max_depth (4, 6)
+
 · learning_rate (0.05, 0.1)
+
 · subsample (0.8, 1.0)
+
 · colsample_bytree (0.8, 1.0)
 
 ## Evaluation Metrics
@@ -69,9 +80,13 @@ XGBoost is optimized using RandomizedSearchCV with cross-validation (3 folds) ov
 Models are evaluated using metrics suitable for imbalanced classification:
 
 · Precision, Recall, and F1-score (primary metrics)
+
 · Confusion Matrix
+
 · ROC-AUC (used for model selection during tuning)
+
 · Precision-Recall Curve (PR Curve)
+
 · PR-AUC (Area Under Precision-Recall Curve)
 
 Given the extreme class imbalance (~0.13% fraud), PR-AUC is a more informative metric than ROC-AUC, as it focuses specifically on the model’s ability to correctly identify the minority (fraud) class without being influenced by the majority class.
