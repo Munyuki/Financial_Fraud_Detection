@@ -70,6 +70,12 @@ Models are evaluated using metrics suitable for imbalanced classification:
 · Precision, Recall, and F1-score (primary metrics)
 · Confusion Matrix
 · ROC-AUC (used for model selection during tuning)
+· Precision-Recall Curve (PR Curve)
+· PR-AUC (Area Under Precision-Recall Curve)
+
+Given the extreme class imbalance (~0.13% fraud), PR-AUC is a more informative metric than ROC-AUC, as it focuses specifically on the model’s ability to correctly identify the minority (fraud) class without being influenced by the majority class.
+
+The Precision-Recall Curve provides a clear view of the trade-off between precision and recall, which is critical in fraud detection where both false positives and false negatives carry significant costs.
 
 ## Model Explainability
 
@@ -83,9 +89,13 @@ The SHAP summary plot reveals that balance errors and transaction patterns are t
 
 ## Key Results
 
-· Logistic Regression: Poor precision for fraud class (1%), despite high recall (95%)
-· Random Forest: Excellent performance (96% recall, 100% precision for fraud)
-· XGBoost (tuned): Best balance with 96% recall and 57% precision for fraud class
+While Random Forest achieved near-perfect precision (100%) and high recall (96%) on the fraud class, this performance may indicate potential overfitting or sensitivity to the synthetic dataset characteristics.
+
+Such unusually high precision is rare in real-world fraud detection scenarios and may not generalize well to unseen data.
+
+In contrast, the tuned XGBoost model provides a more realistic and balanced performance, achieving 96% recall and 57% precision. This reflects a more practical trade-off between detecting fraudulent transactions and minimizing false alarms.
+
+Therefore, XGBoost is selected as the preferred model due to its better generalization capability and robustness.
 
 ## Visualizations
 
@@ -102,9 +112,20 @@ The SHAP summary plot reveals that balance errors and transaction patterns are t
 
 Feature importance analysis confirms that balance inconsistencies (orig_balance_error, dest_balance_error) and transaction amount are the strongest predictors of fraudulent activity.
 
+### Precision-Recall Curve
+![Precision-Recall Curve](images/pr_curve.png)
+
+*The PR curve highlights the trade-off between precision and recall for the fraud class, providing a more realistic evaluation of model performance on imbalanced data.*
+
 ## Business Impact
 
-The model can be deployed in real-time systems to flag suspicious transactions, reducing financial losses and improving security in mobile payment platforms. High recall ensures that most fraudulent activities are detected, while SHAP explainability provides auditability and regulatory compliance support.
+The model can be deployed in real-time transaction processing systems to flag suspicious activities before completion, significantly reducing financial losses.
+
+With a recall of 96%, the model is capable of detecting approximately 96 out of every 100 fraudulent transactions, ensuring that the majority of fraud attempts are identified.
+
+Although the model produces some false positives (precision of 57%), this is often acceptable in fraud detection systems where the cost of missing fraud is substantially higher than investigating legitimate transactions.
+
+Additionally, the use of SHAP explainability enhances transparency, enabling financial institutions to justify flagged transactions for auditing and regulatory compliance purposes.
 
 ## Requirements
 
@@ -116,7 +137,9 @@ The model can be deployed in real-time systems to flag suspicious transactions, 
 
 ## Future Work
 
-· Deploy model as a real-time API endpoint
-· Implement cost-sensitive learning to optimize for business metrics
-· Explore anomaly detection techniques (Isolation Forest, Autoencoders)
-· Add additional behavioral features from transaction sequences
+· Deploy the trained XGBoost model as a REST API using frameworks such as Flask or FastAPI for real-time fraud detection  
+· Integrate the model into a streaming pipeline (e.g., Kafka or cloud-based event systems) for continuous transaction monitoring  
+· Implement cost-sensitive learning to explicitly optimize business impact by assigning higher penalties to false negatives  
+· Explore advanced anomaly detection techniques such as Isolation Forest and Autoencoders for unsupervised fraud detection  
+· Incorporate temporal and behavioral features derived from transaction sequences to improve model accuracy  
+· Perform model monitoring and drift detection to ensure sustained performance in production environments  
