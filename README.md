@@ -82,7 +82,9 @@ The Precision-Recall Curve provides a clear view of the trade-off between precis
 SHAP (SHapley Additive exPlanations) is used to interpret model predictions, providing:
 
 · Feature importance visualization
+
 · Insights into which features contribute most to fraud detection
+
 · Enhanced transparency and trust in the model
 
 The SHAP summary plot reveals that balance errors and transaction patterns are the strongest indicators of fraud.
