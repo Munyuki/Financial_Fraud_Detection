@@ -91,13 +91,11 @@ The SHAP summary plot reveals that balance errors and transaction patterns are t
 
 ## Key Results
 
-While Random Forest achieved near-perfect precision (100%) and high recall (96%) on the fraud class, this performance may indicate potential overfitting or sensitivity to the synthetic dataset characteristics.
+While Random Forest achieved near-perfect precision (100%) and high recall (96%) on the fraud class, this performance may indicate potential overfitting or sensitivity to the synthetic dataset characteristics. Such unusually high precision is rare in real-world fraud detection scenarios and may not generalize well to unseen data.
 
-Such unusually high precision is rare in real-world fraud detection scenarios and may not generalize well to unseen data.
+In contrast, the tuned XGBoost model provides a more realistic and robust performance, achieving 90% recall and 81% precision. This reflects a more practical trade-off between detecting fraudulent transactions and minimizing false alarms.
 
-In contrast, the tuned XGBoost model provides a more realistic and balanced performance, achieving 96% recall and 57% precision. This reflects a more practical trade-off between detecting fraudulent transactions and minimizing false alarms.
-
-Therefore, XGBoost is selected as the preferred model due to its better generalization capability and robustness.
+Therefore, XGBoost is selected as the preferred model due to its better generalization capability and higher reliability in a production environment.
 
 ## Visualizations
 
