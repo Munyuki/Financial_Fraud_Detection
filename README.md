@@ -49,6 +49,7 @@ The project evaluates multiple machine learning models:
 Instead of undersampling, the project uses:
 
 · class_weight='balanced' for Logistic Regression and Random Forest
+
 · scale_pos_weight parameter in XGBoost
 
 This approach preserves valuable data while improving fraud detection performance.
