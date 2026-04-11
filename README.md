@@ -19,7 +19,7 @@ The dataset is a synthetic financial dataset generated using the PaySim simulato
 
 ### Dataset:
 - **Source:** Kaggle - Synthetic Financial Datasets For Fraud Detection (PaySim)
-- **License:** CC BY-NC-SA 4.0
+- **License:** CC BY-SA 4.0
 - **Description:** Simulated mobile money transactions with ~0.13% fraud rate
 - **Link:** [https://www.kaggle.com/datasets/ealaxi/paysim1](https://www.kaggle.com/datasets/ealaxi/paysim1)
 
