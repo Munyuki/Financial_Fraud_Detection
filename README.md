@@ -103,6 +103,7 @@ Therefore, XGBoost is selected as the preferred model due to its better generali
 
 ### Class Imbalance
 <img width="504" height="350" alt="Fraud vs Non-Fraud Distribution" src="https://github.com/user-attachments/assets/648309fd-e36b-4a43-b52a-45b6aa3f05e3" />
+
 *Only 0.13% of transactions are fraudulent*
 
 ### Model Performance
@@ -110,6 +111,7 @@ Therefore, XGBoost is selected as the preferred model due to its better generali
 
 ### Feature Importance (SHAP)
 <img width="547" height="449" alt="SHAP Summary Plot" src="https://github.com/user-attachments/assets/283fa3d9-cd9e-4239-92ad-56a774c629a4" />
+
 *Balance errors are the strongest fraud indicators*
 
 Feature importance analysis confirms that balance inconsistencies (orig_balance_error, dest_balance_error) and transaction amount are the strongest predictors of fraudulent activity.
