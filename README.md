@@ -102,20 +102,20 @@ Therefore, XGBoost is selected as the preferred model due to its better generali
 ## Visualizations
 
 ### Class Imbalance
-![Fraud vs Non-Fraud Distribution](images/fraud_distribution.png)
+<img width="504" height="350" alt="Fraud vs Non-Fraud Distribution" src="https://github.com/user-attachments/assets/648309fd-e36b-4a43-b52a-45b6aa3f05e3" />
 *Only 0.13% of transactions are fraudulent*
 
 ### Model Performance
-![XGBoost Classification Report](images/classification_report.png)
+<img width="677" height="139" alt="XGBoost Classification Report" src="https://github.com/user-attachments/assets/5c20b62a-f46c-407c-93d8-6b5076532fb2" />
 
 ### Feature Importance (SHAP)
-![SHAP Summary Plot](images/shap_summary.png)
+<img width="547" height="449" alt="SHAP Summary Plot" src="https://github.com/user-attachments/assets/283fa3d9-cd9e-4239-92ad-56a774c629a4" />
 *Balance errors are the strongest fraud indicators*
 
 Feature importance analysis confirms that balance inconsistencies (orig_balance_error, dest_balance_error) and transaction amount are the strongest predictors of fraudulent activity.
 
 ### Precision-Recall Curve
-![Precision-Recall Curve](images/pr_curve.png)
+<img width="414" height="325" alt="Precision Recall Curve (2)" src="https://github.com/user-attachments/assets/9bba6edc-07dd-472c-8542-5bfe2f548ee7" />
 
 *The PR curve highlights the trade-off between precision and recall for the fraud class, providing a more realistic evaluation of model performance on imbalanced data.*
 
